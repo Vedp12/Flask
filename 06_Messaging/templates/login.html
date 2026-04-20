@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+    {% with messages = get_flashed_messages() %} {# It is a Jinja2 template block in Flask used to retrieve and consume flashed messages from the session, ensuring they are displayed only once before being removed.#}
+    {% if messages %}
+        {% for msg in messages %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <form action="" method="post">
+  
+  <p><input placeholder="Enter name" type="text" name="name" id="" /></p>
+  <p><input type="submit" name="submit" /></p>
+</form>
+{% endblock %}

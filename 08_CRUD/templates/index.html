@@ -1,0 +1,38 @@
+{% extends 'master.html' %} {% block title %}Add student{% endblock%} {% block
+body %}
+
+<div class="container">
+  <div>
+    <div class="col-md-12"></div>
+  </div>
+  <div class="">
+    <table class="table">
+      <thead>
+        <th>id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>gender</th>
+        <th>hobbies</th>
+        <th>Action</th>
+      </thead>
+      <tr>
+        {% for student in students %}
+        <td>{{ student.id }}</td>
+        <td>{{ student.first_name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.password }}</td>
+        <td>{{ student.gender }}</td>
+        <td>{{ student.hobbies }}</td>
+        <td><span style="font-size: 24px;color: green;">
+            <a href="/{{student.id}}/edit"><i class="fas fa-edit"></i></a>
+        </span></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% endblock %}

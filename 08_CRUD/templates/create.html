@@ -1,0 +1,67 @@
+{% extends 'master.html' %} {% block title %}Add student{% endblock%} {% block
+body %}
+
+<div class="container">
+  <form method="POST">
+    <table class="table">
+      <tr>
+        <td>first name</td>
+        <td><input type="text" name="first_name" id="form-control" /></td>
+      </tr>
+      <tr>
+        <td>last name</td>
+        <td><input type="text" name="last_name" id="form-control" /></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="email" name="email" id="form-control" /></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          Male:<input type="radio" name="gender" value="Male" id="form-control" />
+          Female:<input type="radio" name="gender" value="Female" id="form-control" />
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="password" id="form-control" /></td>
+      </tr>
+      <tr>
+        <td>Hobbies</td>
+        <td>
+          Cricket:<input
+            type="checkbox"
+            value="Cricket"
+            name="hobbies"
+            id="form-control"
+          />
+          Movie:<input
+            type="checkbox"
+            value="Movie"
+            name="hobbies"
+            id="form-control"
+          />
+          TV:<input
+            type="checkbox"
+            value="TV"
+            name="hobbies"
+            id="form-control"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input
+            type="submit"
+            name="submit"
+            value="submit"
+            class="btn btn-secondary"
+          />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+{% endblock %}

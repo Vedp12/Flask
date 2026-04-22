@@ -1,0 +1,122 @@
+{% extends 'master.html' %} {% block title %}Add students{% endblock%}
+{% block body %}
+
+<div class="container">
+  <form method="POST">
+    <table class="table">
+      <tr>
+        <td>first name</td>
+        <td>
+          <input
+            type="text"
+            name="first_name"
+            id="form-control"
+            value=" {{ students.first_name }} "
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>last name</td>
+        <td>
+          <input
+            type="text"
+            name="last_name"
+            id="form-control"
+            value="{{ students.last_name }} "
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input
+            type="email"
+            name="email"
+            id="form-control"
+            value="{{ students.email }} "
+          />
+        </td>
+      </tr>
+      <tr>
+  <td>Gender</td>
+  <td>
+    Male:
+    <input
+      type="radio"
+      name="gender"
+      id="form-control"
+      value="male"
+      {% if students.gender == "male" %}
+      checked
+      {% endif %}
+    />
+    Female:
+    <input
+      type="radio"
+      name="gender"
+      id="form-control"
+      value="female"
+      {% if students.gender == "female" %}
+      checked
+      {% endif %}
+    />
+  </td>
+</tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input
+            type="password"
+            name="password"
+            id="form-control"
+            value=" {{ students.password }}"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Hobbies</td>
+        <td>
+          Cricket:<input
+            type="checkbox"
+            value="Cricket"
+            name="hobbies"
+            id="form-control"
+            {% if 'Cricket' in students.hobbies %}
+            checked
+            {% endif %}
+          />
+          Movie:<input
+            type="checkbox"
+            value="Movie"
+            name="hobbies"
+            id="form-control"
+            {% if 'Movies' in students.hobbies %}
+            checked
+            {% endif %}
+          />
+          TV:<input
+            type="checkbox"
+            value="TV"
+            name="hobbies"
+            id="form-control"
+            {% if 'TV' in students.hobbies %}
+            checked
+            {% endif %}
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input
+            type="submit"
+            name="submit"
+            value="submit"
+            class="btn btn-secondary"
+          />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+{% endblock %}
